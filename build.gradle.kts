@@ -16,6 +16,7 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-webflux")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("io.projectreactor:reactor-test")
+    testImplementation("com.github.tomakehurst:wiremock:3.0.0-beta-2")
 }
 
 tasks.withType<Test> {
