@@ -1,0 +1,127 @@
+openapi: 3.0.3
+info:
+  title: Car Shop API
+  version: 1.0.0
+  description: |
+    API for Eleveo Car Shop Assignment
+  contact:
+    name: Eleveo
+    url: https://www.eleveo.com/
+    email: info@eleveo.com
+servers:
+  - url: http://localhost/car-shop/v1
+paths:
+  /cars:
+    get:
+      summary: Returns list of available cars
+      description: Returns list of available cars
+      operationId: getCars
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/carsList'
+        '500':
+          description: Error
+  /orders:
+    post:
+      summary: Order car
+      description: Create order for specified car ID
+      operationId: orderCar
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/order'
+      responses:
+        '204':
+          description: Order was created
+        '400':
+          description: Invalid input.
+        '500':
+          description: Error
+components:
+  schemas:
+    carsList:
+      type: object
+      required:
+        - cars
+      properties:
+        cars:
+          type: array
+          items:
+            $ref: '#/components/schemas/car'
+    car:
+      type: object
+      required: 
+        - carId
+        - manufacturer
+        - model
+        - engineType
+        - powerWatts
+        - price
+        - priceCurrency
+      properties:
+        carId:
+          type: string
+          format: uuid
+          description: Car Id
+        manufacturer:
+          type: string
+        model:
+          type: string
+        engineType:
+          type: string
+          enum: 
+            - DIESEL
+            - UNLEADED
+            - HYBRID
+            - ELECTRIC
+        powerWatts:
+          type: integer
+          format: int32
+        heightMeters: 
+          type: number
+          format: double
+        widthMeters: 
+          type: number
+          format: double
+        lengthMeters: 
+          type: number
+          format: double
+        price: 
+          type: integer
+          format: int32
+        priceCurrency:
+          type: string
+          enum: 
+            - USD
+            - EUR
+            - GBP
+            - CZK
+      example: 
+        carId: 822ac97f-1202-4399-95f5-a4a4a183f20a
+        manufacturer: Tesla
+        model: Model X Plaid 
+        engineType: ELECTRIC
+        powerWatts: 373746
+        heightMeters: 1.1
+        widthMeters: 2.1
+        lengthMeters: 5.5
+        price: 299000
+        priceCurrency: USD
+
+    order:
+      type: object
+      required:
+        - carId
+      properties:
+        carId:
+          type: string
+          format: uuid
+          description: Car Id
+      example: 
+        carId: 822ac97f-1202-4399-95f5-a4a4a183f20a
