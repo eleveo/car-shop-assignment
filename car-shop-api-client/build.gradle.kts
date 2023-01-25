@@ -1,6 +1,5 @@
 plugins {
 	`java-library`
-	id("org.springframework.boot")
 	id("io.spring.dependency-management")
 	id("org.openapi.generator") version "6.2.1"
 }
@@ -8,7 +7,6 @@ plugins {
 val openApi by configurations.creating // special dependency used only for source generation
 dependencies {
 	api("org.springframework.boot:spring-boot-starter-webflux")
-	//api("org.springframework.boot:spring-boot-starter-validation")
 	api("com.fasterxml.jackson.datatype:jackson-datatype-jsr310")
 	implementation("io.swagger:swagger-annotations:1.6.6")
 	implementation("com.google.code.findbugs:jsr305:3.0.2")

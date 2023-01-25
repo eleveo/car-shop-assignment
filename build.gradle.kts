@@ -16,6 +16,14 @@ allprojects {
 			release(17)
 		}
 	}
+
+	apply(plugin = "io.spring.dependency-management")
+	dependencyManagement {
+		imports {
+			mavenBom(org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES)
+		}
+	}
+
 }
 
 tasks.withType<Test> {
