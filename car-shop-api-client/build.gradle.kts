@@ -21,7 +21,7 @@ sourceSets.main {
 
 openApiGenerate {
 	inputSpec(file("openapi/openapi.yaml").path)
-	ignoreFileOverride("${projectDir}/.openapi-generator-ignore") // remove to generate full sources, e.g., to check required dependencies
+	ignoreFileOverride(file(".openapi-generator-ignore").path)
 	generatorName("java")
 	library("webclient")
 	packageName("com.eleveo.carshop.client")
@@ -43,5 +43,3 @@ tasks {
 // workaround for missing syntax sugar in gradle.kts - see https://github.com/gradle/gradle/issues/9268
 operator fun <T> Property<T>.invoke(value: T?) = value(value)
 operator fun <T> Property<T>.invoke(from: Provider<T>) = value(from)
-operator fun <K, V> MapProperty<K, V>.invoke(value: Map<K, V>) = value(value)
-operator fun <K, V> MapProperty<K, V>.invoke(from: Provider<Map<K, V>>) = value(from)

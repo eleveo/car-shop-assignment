@@ -3,9 +3,6 @@ plugins {
 	id("io.spring.dependency-management") version "1.1.0"
 }
 
-group = "com.eleveo"
-version = "0.0.1-SNAPSHOT"
-
 allprojects {
 	repositories {
 		mavenCentral()
@@ -23,7 +20,6 @@ allprojects {
 			mavenBom(org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES)
 		}
 	}
-
 }
 
 tasks.withType<Test> {
