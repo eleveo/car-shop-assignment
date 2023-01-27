@@ -44,7 +44,7 @@ To build and execute tests just run:
 
 ## Authors
 
-[Eleveo Technical Experts Group](teg@eleveo.com)
+[Eleveo Technical Experts Group](mailto:teg@eleveo.com)
 
 ## Version History
 
