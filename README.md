@@ -40,6 +40,12 @@ To build and execute tests just run:
 ./gradlew clean test --info
 ```
 
+### How to Submit the Assignment
+
+ - create branch (in original repository) identified by your name
+ - implement the assignment
+ - create Pull Request to the main branch
+
 ## Authors
 [Eleveo Technical Experts Group](mailto:teg@eleveo.com)
 
