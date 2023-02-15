@@ -11,6 +11,7 @@ public class DummyCarShopper implements CarShopper {
 
 	@Override
 	public void selectAndBuyCars(String serverUri) {
+		//TODO implement better
 		DefaultApi defaultApi = new DefaultApi(new ApiClient().setBasePath(serverUri));
 		Car car = defaultApi.getCars().block().getCars().get(0);
 		Order order = new Order();
