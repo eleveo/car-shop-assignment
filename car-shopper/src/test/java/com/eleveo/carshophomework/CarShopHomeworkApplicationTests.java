@@ -19,7 +19,7 @@ class CarShopHomeworkApplicationTests {
 	void singleCarOrder() {
 		stubFor(get("/cars").willReturn(ok()
 				.withHeader("Content-Type", "application/json")
-				.withBodyFile("cars-1.json")
+				.withBodyFile("single-car.json")
 		));
 		stubFor(post("/orders").willReturn(noContent()));
 		carShopper.selectAndBuyCars(BASE_URL);
