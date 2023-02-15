@@ -42,9 +42,10 @@ To build and execute tests just run:
 
 ### How to Submit the Assignment
 
- - create branch (in original repository) identified by your name
+ - fork repository 
+ - create branch identified by your name
  - implement the assignment
- - create Pull Request to the main branch
+ - create Pull Request to the main branch of original repository
 
 ## Authors
 [Eleveo Technical Experts Group](mailto:teg@eleveo.com)
