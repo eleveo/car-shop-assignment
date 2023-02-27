@@ -52,4 +52,21 @@ class CarShopHomeworkApplicationTests {
 				.withRequestBody(equalToJson("{\"carId\": \"26a2664c-a44f-3b86-91d5-bbd4cf3cdda0\"}")));
 	}
 
+	@Test
+	void selectiveCarOrderWithLessCars() {
+		stubFor(get("/cars").willReturn(ok()
+				.withHeader("Content-Type", "application/json")
+				.withBodyFile("less_cars.json")
+		));
+		stubFor(post("/orders").willReturn(noContent()));
+		selectiveCarShopper.selectAndBuyCars(BASE_URL);
+		verify(3, postRequestedFor(urlEqualTo("/orders")));
+		verify(postRequestedFor(urlPathEqualTo("/orders"))
+				.withRequestBody(equalToJson("{\"carId\": \"79c7faaf-d0af-304e-94aa-6e426ae1d07a\"}")));
+		verify(postRequestedFor(urlPathEqualTo("/orders"))
+				.withRequestBody(equalToJson("{\"carId\": \"38ef9824-8f34-3ba0-aabc-d96af5b71bb5\"}")));
+		verify(postRequestedFor(urlPathEqualTo("/orders"))
+				.withRequestBody(equalToJson("{\"carId\": \"881fcb0f-db01-3522-a72b-c8fcec716792\"}")));
+	}
+
 }
