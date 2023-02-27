@@ -1,0 +1,52 @@
+{
+  "cars": [
+    {
+      "carId": "79c7faaf-d0af-304e-94aa-6e426ae1d07a",
+      "manufacturer": "Tata",
+      "model": "sit",
+      "engineType": "DIESEL",
+      "powerWatts": 9999999,
+      "heightMeters": 1.42,
+      "widthMeters": 2.66,
+      "lengthMeters": 5.6,
+      "price": 30505,
+      "priceCurrency": "GBP"
+    },
+    {
+      "carId": "38ef9824-8f34-3ba0-aabc-d96af5b71bb5",
+      "manufacturer": "Tata",
+      "model": "sit",
+      "engineType": "DIESEL",
+      "powerWatts": 9999998,
+      "heightMeters": 1.42,
+      "widthMeters": 2.66,
+      "lengthMeters": 5.6,
+      "price": 30505,
+      "priceCurrency": "GBP"
+    },
+    {
+      "carId": "2c7a5682-a9af-347f-b750-aa9624dddd66",
+      "manufacturer": "Tata",
+      "model": "sit",
+      "engineType": "DIESEL",
+      "powerWatts": 9999997,
+      "heightMeters": 1.42,
+      "widthMeters": 2.66,
+      "lengthMeters": 5.6,
+      "price": 30505,
+      "priceCurrency": "GBP"
+    },
+    {
+      "carId": "881fcb0f-db01-3522-a72b-c8fcec716792",
+      "manufacturer": "Mazda",
+      "model": "omnis",
+      "engineType": "HYBRID",
+      "powerWatts": 9999996,
+      "heightMeters": 0.97,
+      "widthMeters": 3,
+      "lengthMeters": 2.06,
+      "price": 138161,
+      "priceCurrency": "GBP"
+    }
+  ]
+}
